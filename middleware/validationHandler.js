@@ -7,7 +7,7 @@ export default (req, res, next) => {
   if (!errors.isEmpty()) {
     const error = new HttpError(400, "Validation Error");
     error.errors = errors;
-    next(error);
+    return next(error);
   }
   next();
 };
